@@ -134,7 +134,7 @@ if __name__ =="__main__":
         else:
             try:
                 question = query
-                app_id = "#######################"            
+                app_id = "#####################"            
                 client = wolframalpha.Client(app_id)
                 res = client.query(question)
                 answer = next(res.results).text
