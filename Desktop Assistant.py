@@ -33,11 +33,10 @@ def wishMe():
         print("Good Evening!")
         speak("Good Evening!")
         
-    print("I am Sudip.Please tell me how can I help you")
-    speak("I am Sudip.Please tell me how can I help you")
+    print("I am your assistant, Please tell me how can I help you")
+    speak("I am your assistant, Please tell me how can I help you")
 
 def takeCommand():
-    query=""
     r = sr.Recognizer()
     with sr.Microphone() as source:
         print("Listening...")
@@ -58,7 +57,7 @@ def sendEmail(to, content):
     server = smtplib.SMTP('smtp.gmail.com',587)
     server.ehlo()
     server.starttls()
-    server.login('youremail@gmail.com', 'your passward')
+    server.login('youremail@gmail.com', 'your passward') 
     server.sendmail('youremail@gmail.com', to, content)
     server.close()
 
@@ -106,7 +105,7 @@ if __name__ =="__main__":
             try:
                 speak("What should I say?")
                 content = takeCommand()
-                to = "sudipyouremail@gmail.com"
+                to = "youremail@gmail.com"
                 sendEmail(to, content)
                 speak("Email has been sent!")
             except Exception as e:
